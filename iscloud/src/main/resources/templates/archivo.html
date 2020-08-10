@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Configure</title>
+	<meta charset="utf-8"/>
+    <!-- FRAMEWORK BOOTSTRAP para el estilo de la pagina-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    
+    <!-- Los iconos tipo Solid de Fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+    <script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+
+    <!-- Nuestro css-->
+    <link rel="stylesheet" type="text/css" href="static/css/archivo-form.css" th:href="@{/css/archivo-form.css}">
+</head>
+<body>
+
+<form action=# target="" method="post" name="formDatosArchivo">
+  
+		<div class="table-responsive">
+			<table id="userList" class="table table-bordered table-hover table-striped" >
+				<thead class="thead-light">
+				<tr>
+					<th scope="col">Fields</th>
+					<th scope="col">Description</th>
+					<th scope="col"></th>
+				</tr>
+				</thead>
+				<tr>
+					<th scope="col">DBSID</th>
+					<th scope="col" th:text="${archivo.DBSID}" method="get" contenteditable="true"></th>					
+				</tr>
+  			    <tr>
+					<th scope="col">DBIP</th>
+					<th scope="col"th:text="${archivo.DBIP}" method="get" contenteditable="true"></th>
+				</tr>
+				<tr>
+					<th scope="col">DBPort</th>
+					<th scope="col"th:text="${archivo.DBport}" method="get" contenteditable="true"></th>
+				</tr>
+				<tr>
+					<th scope="col">DBUserName</th>
+					<th scope="col"th:text="${archivo.DBUserName}" method="get" contenteditable="true"></th>
+				</tr>				
+				<tr>
+					<th scope="col">DBPassword</th>
+					<th input scope="col" th:text ="${archivo.DBPassword}" method="get" contenteditable="true"></th>
+				</tr>
+				<tr>
+					<th scope="col">PartitionCount</th>
+					<th scope="col"th:text="${archivo.PartitionCount}" method="get" contenteditable="true"></th>
+				</tr>
+				<tr>
+					<th scope="col">MinconnectionPerPartition</th>
+					<th scope="col"th:text="${archivo.Minconnection}" method="get" contenteditable="true"></th>
+				</tr>
+				<tr>
+					<th scope="col">MaxconnectionPerPartition</th>
+					<th scope="col"th:text="${archivo.Maxconnection}" method="get" contenteditable="true"></th>
+				</tr>
+				<tr>
+					<th scope="col">PDFPath</th>
+					<th scope="col"th:text="${archivo.Path}" method="get" contenteditable="true"></th>
+				</tr>
+				<tr>
+					<th scope="col">EmailAddress</th>
+					<th scope="col"th:text="${archivo.Email}" method="get" contenteditable="true"></th>
+				</tr>
+			</table>
+		</div>
+		<input type="submit" name="enviar" value="Configure Properties"/>
+</form>
+
+</body>
+</html>
